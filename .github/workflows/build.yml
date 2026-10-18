@@ -19,10 +19,14 @@ jobs:
         with:
           gradle-version: 8.7
 
+      - name: Unzip project
+        run: unzip -o RooftopHero-1.zip
+
       - name: Build release APK
+        working-directory: RooftopHero
         run: gradle assembleRelease --no-daemon
 
       - uses: actions/upload-artifact@v4
         with:
           name: RooftopHero-apk
-          path: app/build/outputs/apk/release/*.apk
+          path: RooftopHero/app/build/outputs/apk/release/*.apk
