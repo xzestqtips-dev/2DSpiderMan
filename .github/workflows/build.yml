@@ -20,7 +20,7 @@ jobs:
           gradle-version: 8.7
 
       - name: Unzip project
-        run: unzip -o RooftopHero-1.zip
+        run: unzip -o RooftopHero.zip
 
       - name: Build release APK
         working-directory: RooftopHero
